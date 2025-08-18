@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Fire Accounts | YASSINE SHOP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-2: #0e141b;
+      --card: #121924;
+      --text: #e6edf3;
+      --muted: #9fb0c5;
+      --brand: #ff7a00; /* primary */
+      --brand-2: #25D366; /* WhatsApp */
+      --accent: #ffd166;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --container: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, #5d2cff33, transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, #ff7a0033, transparent 50%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      background-attachment: fixed;
+    }
+
+    /* --- Layout helpers --- */
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+    }
+
+    /* --- Navbar --- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11,15,20,.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2a36;
+    }
+    .nav__inner { display:flex; align-items:center; justify-content:space-between; padding: .9rem 0; }
+    .logo { display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.3px; }
+    .logo__mark { width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg,#ff7a00,#ffb703); display:grid; place-items:center; box-shadow: var(--shadow); }
+    .logo__mark svg { width:18px; height:18px; color:#0b0f14; }
+
+    .nav__links { display:flex; gap:1rem; align-items:center; }
+    .nav__links a { color: var(--muted); text-decoration:none; font-weight:500; font-size:.95rem; }
+    .nav__links a:hover { color: var(--text); }
+
+    .btn { display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; padding:.8rem 1.1rem; border-radius:12px; font-weight:700; border:1px solid transparent; box-shadow: var(--shadow); transition:.2s transform, .2s filter; }
+    .btn:active { transform: translateY(1px); }
+    .btn--primary { background: linear-gradient(135deg, #ff7a00, #ffb703); color:#0b0f14; }
+    .btn--whats { background: var(--brand-2); color:#0b0f14; }
+
+    /* --- Hero --- */
+    .hero {
+      padding: 80px 0 40px;
+      background-image: url('https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover; background-position: center; position: relative;
+      isolation: isolate;
+    }
+    .hero::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(11,15,20,.65), rgba(11,15,20,.9)); z-index:-1; }
+    .hero__grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items:center; }
+    .hero h1 { font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem); line-height:1.1; margin:0 0 .8rem; }
+    .hero p { color: var(--muted); font-size: 1.05rem; margin:0 0 1.2rem; }
+    .hero__badges { display:flex; gap:.6rem; flex-wrap:wrap; margin:.8rem 0 1.4rem; }
+    .badge { background:#0f1723; border:1px solid #223044; color:#b6c7de; padding:.45rem .7rem; border-radius:999px; font-size:.85rem; }
+
+    .hero__card { background: #0e141b99; border:1px solid #223044; border-radius: var(--radius); padding:1.1rem; }
+    .hero__card h3 { margin:.2rem 0 .8rem; }
+    .field { display:flex; flex-direction:column; gap:.35rem; margin:.6rem 0; }
+    .input { padding:.85rem 1rem; background:#0b1119; border:1px solid #223044; border-radius:12px; color:var(--text); }
+
+    /* --- Section titles --- */
+    .section { padding: 60px 0; }
+    .section__title { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2.1rem); margin: 0 0 .4rem; }
+    .section__subtitle { color: var(--muted); margin: 0 0 1.6rem; }
+
+    /* --- Products --- */
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { background: var(--card); border:1px solid #223044; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); display:flex; flex-direction:column; }
+    .card__media { aspect-ratio: 16 / 10; background:#0c1320; display:block; width:100%; object-fit:cover; }
+    .card__body { padding: 1rem; display:flex; flex-direction:column; gap:.6rem; }
+    .price { color:#52e0a6; font-weight:700; }
+    .card__actions { display:flex; gap:.5rem; margin-top:auto; }
+    .btn--ghost { background: transparent; border:1px solid #2a3a52; color: var(--text); }
+
+    /* --- Features --- */
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; }
+    .feature { background: var(--card); border:1px solid #223044; border-radius: var(--radius); padding:1.1rem; display:flex; gap:.8rem; align-items:flex-start; }
+    .feature svg { width:26px; height:26px; flex:0 0 26px; }
+
+    /* --- Footer --- */
+    footer { border-top:1px solid #1f2a36; color: #8ea0b8; padding: 28px 0; }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .nav__links { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="logo">
+        <span class="logo__mark" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </span>
+        <span>FF Pro Shop</span>
+      </div>
+      <div class="nav__links">
+        <a href="#products">Products</a>
+        <a href="#features">Why Us</a>
+        <a href="#contact" class="btn btn--ghost">Contact</a>
+        <a class="btn btn--primary" href="#products">Shop Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero__grid">
+      <div>
+        <h1>Buy Trusted <span style="color:var(--accent)">Free Fire</span> Accounts & Diamonds</h1>
+        <p>100% trusted • Fast delivery • Best Moroccan prices. Pay easily and get your account or top‑up in minutes.</p>
+        <div class="hero__badges">
+          <span class="badge">Secure Trade</span>
+          <span class="badge">Instant Support</span>
+          <span class="badge">Exclusive Skins</span>
+        </div>
+        <a class="btn btn--primary" href="#products">Browse Deals</a>
+        <a class="btn btn--whats" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20n9tini%20Free%20Fire" target="_blank">WhatsApp</a>
+      </div>
+
+      <aside class="hero__card">
+        <h3>Quick Contact</h3>
+        <div class="field">
+          <label>Name</label>
+          <input class="input" type="text" placeholder="Yassine Shop" />
+        </div>
+        <div class="field">
+          <label>What do you need?</label>
+          <input class="input" type="text" placeholder="Account / Diamonds / Help" />
+        </div>
+        <a class="btn btn--whats" style="width:100%; justify-content:center" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20n9tini%20Free%20Fire" target="_blank">Chat on WhatsApp</a>
+        <p style="color:var(--muted); font-size:.85rem; margin:.7rem 0 0;">We reply in minutes • 10:00–23:30</p>
+      </aside>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section__title">Why players choose us</h2>
+      <p class="section__subtitle">Transparent pricing • real screenshots • fast handover</p>
+      <div class="features">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="#52e0a6"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <h4>Verified Accounts</h4>
+            <p class="muted">Each account is checked and delivered safely.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="#ffd166"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5h-2v7h6v-2h-4z"/></svg>
+          <div>
+            <h4>Fast Delivery</h4>
+            <p class="muted">Most orders delivered within 10–30 minutes.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="#76a9ff"><path d="M12 1l3 5.9 6.5.9-4.7 4.5 1.1 6.5L12 16.9 6.1 18.8l1.1-6.5L2.5 7.8 9 6.9z"/></svg>
+          <div>
+            <h4>Great Prices</h4>
+            <p class="muted">Best value in MA – ask for custom bundles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2 class="section__title">Featured deals</h2>
+      <p 
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <img class="card__media" src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200&auto=format&fit=crop" alt="Account Starter" />
+          <div class="card__body">
+            <h3>Account Starter</h3>
+            <p class="muted">Level 30+, some skins, good KD.</p>
+            <div class="price">80 MAD</div>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#" onclick="alert('Add real details or a product page link'); return false;">Details</a>
+              <a class="btn btn--whats" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20Account%20Starter%20100%20MAD" target="_blank">Buy on WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img class="card__media" src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200&auto=format&fit=crop" alt="Account Pro" />
+          <div class="card__body">
+            <h3>Account Pro</h3>
+            <p class="muted">Level 50+, rare skins & passes.</p>
+            <div class="price">from 150 to 250 MAD</div>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#" onclick="alert('Add real details or a product page link'); return false;">Details</a>
+              <a class="btn btn--whats" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20Account%20Pro%20250%20MAD" target="_blank">Buy on WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img class="card__media" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Diamonds Top‑Up" />
+          <div class="card__body">
+            <h3>Diamonds Top‑Up</h3>
+            <p class="muted">Fast & safe recharge – any amount.</p>
+            <div class="price">from 30 MAD</div>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#" onclick="alert('Add real details or a product page link'); return false;">Details</a>
+              <a class="btn btn--whats" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20Top-Up%20Diamonds" target="_blank">Buy on WhatsApp</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container" style="display:grid; gap:1rem; grid-template-columns: 1fr 1fr; align-items:start;">
+      <div>
+        <h2 class="section__title">Contact & Support</h2>
+        <p class="section__subtitle">We answer quickly on WhatsApp • 10:00–23:30</p>
+        <a class="btn btn--whats" href="https://wa.me/212772564412?text=Salam%2C%20bghit%20n9tini%20Free%20Fire" target="_blank">Message us on WhatsApp</a>
+      </div>
+      <div class="card" style="padding:1rem;">
+        <h3 style="margin-top:.2rem">FAQs</h3>
+        <details>
+          <summary>How do I receive my account?</summary>
+          <p class="muted">After payment, we hand over login details safely and help you secure it.</p>
+        </details>
+        <details>
+          <summary>Is it safe?</summary>
+          <p class="muted">Yes, we verify items and use a clean transfer process. Ask for a live screenshot.</p>
+        </details>
+        <details>
+          <summary>Payment methods?</summary>
+          <p class="muted">Contact us for the current options in MA (bank/CIH/…)</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <span>© <span id="y"></span> Yassine shop <i class=" fa-shekel-sign    "></i></span>
+      <span style="color:#6e819b">Made with ❤️ in MA</span>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
